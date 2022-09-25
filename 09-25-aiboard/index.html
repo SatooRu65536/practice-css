@@ -94,11 +94,13 @@
     const translateY = document.getElementById('translate-y');
     const translateZ = document.getElementById('translate-z');
 
-    translateX.addEventListener('input', change);
-    translateY.addEventListener('input', change);
-    translateZ.addEventListener('input', change);
+    positionX.addEventListener('input', change_translate);
+    positionY.addEventListener('input', change_translate);
+    translateX.addEventListener('input',change_rotate);
+    translateY.addEventListener('input', change_rotate);
+    translateZ.addEventListener('input', change_rotate);
 
-    function change() {
+    function change_rotate() {
         const dice = document.getElementsByClassName('dice')[0];
         const x = translateX.value;
         const y = translateY.value;
@@ -106,8 +108,11 @@
         dice.style.transform = `rotateZ(${z}deg) rotateY(${y}deg) rotateX(${x}deg)`;
     }
 
-    function move() {
-        const dice = document.getElementsByClassName('dice')[0];
+    function change_translate() {
+        const container = document.getElementsByClassName('container')[0];
+        const x = positionX.value;
+        const y = positionY.value;
+        container.style.transform = `translateY(${y}px) translateX(${x}px) `;
     }
 </script>
 
