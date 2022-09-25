@@ -1,0 +1,215 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    min-height: 100vh;
+    background-color: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+body:hover .container {
+    animation-name: fall;
+    animation-duration: 5s;
+    animation-timing-function: ease-in;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+}
+
+body:hover .dice {
+    animation-name: roll;
+    animation-duration: 5s;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-200px);
+    }
+    20% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes roll {
+    0% {
+        transform: rotateZ(0deg) rotateY(30deg) rotateX(60deg);
+    }
+    30% {
+        transform: rotateZ(0deg) rotateY(360deg) rotateX(180deg);
+    }
+    100% {
+        transform: rotateZ(0deg) rotateY(0deg) rotateX(0deg);
+    }
+}
+
+.start {
+    padding: 10px;
+    border-radius: 10px;
+    color: #eee;
+    background: #222;
+    cursor: pointer;
+    position: absolute;
+    top: 70%;
+}
+
+.dice {
+    width: 100px;
+    height: 100px;
+    transform-style: preserve-3d;
+    transform: rotateZ(-17deg) rotateY(30deg) rotateX(60deg);
+    position: relative;
+}
+
+.dice:before {
+    background: aqua;
+    transform-style: preserve-3d;
+    transform: translateZ(-50px);
+}
+
+.dice div {
+    width: 100px;
+    height: 100px;
+    color: #fff;
+    background-color: #735456;
+    border: solid 4px #fff;
+    position: absolute;
+    transform-style: preserve-3d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dice .surface {
+    transform: rotateX(calc(90deg * var(--i))) translateZ(50px);
+}
+
+.dice .side-right {
+    transform: rotateY(calc(90deg)) translateZ(50px);
+}
+
+.dice .side-left {
+    transform: rotateY(calc(90deg)) translateZ(-50px);
+}
+
+
+.logo {
+    width: 60%;
+}
+.logo .logo-color {
+    fill: #fff;
+}
+
+.dice div .pet {
+    position: absolute;
+}
+
+.dice .surface:nth-child(2) {
+    transform: rotateX(-90deg) translateZ(-50px);
+}
+.dice .surface:nth-child(2) .pet:nth-child(1) {
+    top: 20px;
+    left: 20px;
+}
+.dice .surface:nth-child(2) .pet:nth-child(2) {
+    bottom: 20px;
+    right: 20px;
+}
+
+
+.dice .surface:nth-child(3) .pet {
+    font-size: 1rem;
+}
+.dice .surface:nth-child(3) .pet:nth-child(1) {
+    top: 15px;
+    left: 20px;
+}
+.dice .surface:nth-child(3) .pet:nth-child(2) {
+    top: 37px;
+    left: 20px;
+}
+.dice .surface:nth-child(3) .pet:nth-child(3) {
+    bottom: 15px;
+    left: 20px;
+}
+.dice .surface:nth-child(3) .pet:nth-child(4) {
+    top: 15px;
+    right: 20px;
+}
+.dice .surface:nth-child(3) .pet:nth-child(5) {
+    top: 37px;
+    right: 20px;
+}
+.dice .surface:nth-child(3) .pet:nth-child(6) {
+    bottom: 15px;
+    right: 20px;
+}
+
+.dice .surface:nth-child(4) .pet {
+    font-size: 1rem;
+}
+.dice .surface:nth-child(4) .pet:nth-child(2) {
+    top: 20px;
+    left: 20px;
+}
+.dice .surface:nth-child(4) .pet:nth-child(3) {
+    bottom: 20px;
+    left: 20px;
+}
+.dice .surface:nth-child(4) .pet:nth-child(4) {
+    top: 20px;
+    right: 20px;
+}
+.dice .surface:nth-child(4) .pet:nth-child(5) {
+    bottom: 20px;
+    right: 20px;
+}
+
+.dice .side-right {
+    transform: rotateX(calc(-90deg)) rotateY(calc(90deg)) translateZ(50px);
+}
+.dice .side-right .pet {
+    font-size: 1.3rem;
+}
+.dice .side-right .pet:nth-child(1) {
+    top: 20px;
+    left: 20px;
+}
+.dice .side-right .pet:nth-child(2) {
+    top: 20px;
+    right: 20px;
+}
+.dice .side-right .pet:nth-child(3) {
+    bottom: 20px;
+    left: 20px;
+}
+.dice .side-right .pet:nth-child(4) {
+    bottom: 20px;
+    right: 20px;
+}
+
+.dice .side-left {
+    transform: rotateX(-90deg) rotateY(calc(-90deg)) translateZ(50px);
+}
+.dice .side-left .pet {
+    font-size: 1.3rem;
+}
+.dice .side-left .pet:nth-child(1) {
+    top: 15px;
+    left: 15px;
+}
+.dice .side-left .pet:nth-child(2) {
+    top: 36px;
+    left: 36px;
+}
+.dice .side-left .pet:nth-child(3) {
+    bottom: 15px;
+    right: 15px;
+}
