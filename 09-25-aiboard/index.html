@@ -51,6 +51,64 @@
             </div>
         </div>
     </div>
+    <div class="translate">
+        <ul>
+            <li>
+                <label>
+                    <span>positionX</span>
+                    <input id="position-x" type="range" min="-200" max="200" />
+                </label>
+            </li>
+            <li>
+                <label>
+                    <span>positionY</span>
+                    <input id="position-y" type="range" min="-200" max="200" />
+                </label>
+            </li>
+            <li>
+                <label>
+                    <span>translateX</span>
+                    <input id="translate-x" type="range" min="-360" max="360" />
+                </label>
+            </li>
+            <li>
+                <label>
+                    <span>translateY</span>
+                    <input id="translate-y" type="range" min="-360" max="360" />
+                </label>
+            </li>
+            <li>
+                <label>
+                    <span></span>translateZ
+                    <input id="translate-z" type="range" min="-360" max="360" />
+                </label>
+            </li>
+        </ul>
+    </div>
 </body>
+
+<script>
+    const positionX = document.getElementById('position-x');
+    const positionY = document.getElementById('position-y');
+    const translateX = document.getElementById('translate-x');
+    const translateY = document.getElementById('translate-y');
+    const translateZ = document.getElementById('translate-z');
+
+    translateX.addEventListener('input', change);
+    translateY.addEventListener('input', change);
+    translateZ.addEventListener('input', change);
+
+    function change() {
+        const dice = document.getElementsByClassName('dice')[0];
+        const x = translateX.value;
+        const y = translateY.value;
+        const z = translateZ.value;
+        dice.style.transform = `rotateZ(${z}deg) rotateY(${y}deg) rotateX(${x}deg)`;
+    }
+
+    function move() {
+        const dice = document.getElementsByClassName('dice')[0];
+    }
+</script>
 
 </html>

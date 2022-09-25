@@ -14,40 +14,13 @@ body {
     position: relative;
 }
 
-body:hover .container {
-    animation-name: fall;
-    animation-duration: 5s;
-    animation-timing-function: ease-in;
-    animation-direction: normal;
-    animation-fill-mode: forwards;
+.translate {
+    position: absolute;
+    right: 100px;
+    bottom: 100px;
 }
-
-body:hover .dice {
-    animation-name: roll;
-    animation-duration: 5s;
-    animation-direction: normal;
-    animation-fill-mode: forwards;
-}
-
-@keyframes fall {
-    0% {
-        transform: translateY(-200px);
-    }
-    20% {
-        transform: translateY(0px);
-    }
-}
-
-@keyframes roll {
-    0% {
-        transform: rotateZ(0deg) rotateY(30deg) rotateX(60deg);
-    }
-    30% {
-        transform: rotateZ(0deg) rotateY(360deg) rotateX(180deg);
-    }
-    100% {
-        transform: rotateZ(0deg) rotateY(0deg) rotateX(0deg);
-    }
+.translate li {
+    list-style: none;
 }
 
 .start {
@@ -64,7 +37,7 @@ body:hover .dice {
     width: 100px;
     height: 100px;
     transform-style: preserve-3d;
-    transform: rotateZ(-17deg) rotateY(30deg) rotateX(60deg);
+    transform: rotateZ(0deg) rotateY(0deg) rotateX(0deg);
     position: relative;
 }
 
